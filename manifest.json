@@ -1,0 +1,13 @@
+{
+  "name": "View Image",
+  "description": "View Image button for Google Chrome",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [ {
+    "matches": ["*://www.google.com.tr/search*"],
+    "js": ["jquery-3.2.1.min.js","content.js"]
+  }],
+  "manifest_version": 2
+}
