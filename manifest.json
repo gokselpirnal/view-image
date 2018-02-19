@@ -6,7 +6,8 @@
     "default_icon": "icon.png"
   },
   "content_scripts": [ {
-    "matches": ["*://www.google.com.tr/search*"],
+    "matches": [ "*://*/*" ],
+    "include_globs": ["*://*.google.*/search*"],
     "js": ["content.js"]
   }],
   "manifest_version": 2
