@@ -1,10 +1,13 @@
-jQuery(document).ready(function () {
-   setTimeout(function(){
-      jQuery('.irc_but_r').each(function(){
-         jQuery(this).find('tbody tr td:first-child').after('<td><a class="i18192 r-iPWUDzUx2UVA see-image" role="button"><span>View Image</span></a></td>');
-         jQuery(this).find('.see-image').click(function(){
-            window.open(jQuery(this).parents().eq(7).find('.irc_mi').attr('src'));
-         })
+document.onreadystatechange = function () {
+   if (document.readyState === 'complete') {
+      document.querySelectorAll('.irc_c').forEach(function (elm) {
+         var btn = document.createElement('td');
+         btn.innerHTML = '<a class="view-image" role="button"><span>View Image</span></a>';
+         var firstBtn = elm.querySelector('.irc_but_r tbody tr td:first-child');
+         firstBtn.parentNode.insertBefore(btn, firstBtn.nextSibling)
+         elm.querySelector('.view-image').onclick = function () {
+            window.open(elm.querySelector('.irc_mi').getAttribute('src'));
+         }
       })
-   },1000)
-})
+   }
+}
